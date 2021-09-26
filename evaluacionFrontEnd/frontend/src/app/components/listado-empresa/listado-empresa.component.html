@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row div-degradado">
+    <div class="col col-md-11">
+      <h3>Gestion de empresas</h3>
+      <h5>Agreaga, edita o elimina numero de usuarios</h5>
+    </div>
+    <div class="col col-md-1">
+      <button class="btn btn-primary btn-circle">Agregar</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td style="text-align: center">No</td>
+          <td style="text-align: center">Estado</td>
+          <td style="text-align: center">Nombre</td>
+          <td style="text-align: center">Email</td>
+          <td style="text-align: center">Nit</td>
+          <td style="text-align: center">Opciones</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let empresa of empresas; let i = index"
+          [ngStyle]="{
+            'background-color': i % 2 == 0 ? '#55EF40 ' : '#72F2EC '
+          }"
+        >
+          <td>{{ empresa.id }}</td>
+          <td>{{ empresa.estado }}</td>
+          <td>{{ empresa.nombre_comercial }}</td>
+          <td>{{ empresa.correo }}</td>
+          <td>{{ empresa.nit }}</td>
+          <td style="text-align: center">
+            <button class="btn btn-primary" (click)="editarEmpresa(empresa.id)">
+              <fa-icon [icon]="faEdit"> </fa-icon>
+            </button>
+
+            <button class="btn btn-danger">
+              <fa-icon [icon]="faTrash"> </fa-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

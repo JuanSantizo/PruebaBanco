@@ -1,0 +1,15 @@
+.div-degradado {
+  background: linear-gradient(to right, rgb(133, 67, 209), white);
+}
+
+.btn-circle {
+  width: 90px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 35px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.42857;
+
+  background-image: -webkit-linear-gradient(left, #eb94d0, #2079b0);
+}

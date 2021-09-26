@@ -1,0 +1,228 @@
+<div class="container">
+  <form [formGroup]="form" (submit)="guardar($event)">
+    <div class="row form-group">
+      <div class="col col-md6">
+        <p>
+          <label>Nombre Comercial</label>
+        </p>
+        <p>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Nombre Comercial"
+            id="nombreComercial"
+            formControlName="nombreComercial"
+            [ngStyle]="{
+              'border-color':
+                nombreComercialField!.errors && nombreComercialField!.touched
+                  ? 'red'
+                  : 'null'
+            }"
+          />
+        </p>
+        <div
+          *ngIf="nombreComercialField!.errors && nombreComercialField!.touched"
+          style="color: red"
+        >
+          <p *ngIf="nombreComercialField!.hasError('required')">
+            El campo nombreComercial es requerido
+          </p>
+        </div>
+      </div>
+
+      <div class="col col-md6">
+        <p>
+          <label>Razon Social</label>
+        </p>
+        <p>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Razon Social"
+            id="razonSocial"
+            formControlName="razonSocial"
+            [ngStyle]="{
+              'border-color':
+                razonSocialField!.errors && razonSocialField!.touched
+                  ? 'red'
+                  : 'null'
+            }"
+          />
+        </p>
+        <div
+          *ngIf="razonSocialField!.errors && razonSocialField!.touched"
+          style="color: red"
+        >
+          <p *ngIf="razonSocialField!.hasError('required')">
+            El campo razonSocial es requerido
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col col-md6">
+        <p>
+          <label>Telefono</label>
+        </p>
+        <p>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Telefono"
+            id="telefono"
+            formControlName="telefono"
+            [ngStyle]="{
+              'border-color':
+                telefonoField!.errors && telefonoField!.touched ? 'red' : 'null'
+            }"
+            mask="(000) 0000-0000"
+          />
+        </p>
+        <div
+          *ngIf="telefonoField!.errors && telefonoField!.touched"
+          style="color: red"
+        >
+          <p *ngIf="telefonoField!.hasError('required')">
+            El campo telefono es requerido
+          </p>
+        </div>
+      </div>
+      <div class="col col-md6">
+        <p>
+          <label>Correo Electronico</label>
+        </p>
+        <p>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Correo Electronico"
+            id="correoElectronico"
+            formControlName="correoElectronico"
+            [ngStyle]="{
+              'border-color':
+                correoElectronicoField!.errors &&
+                correoElectronicoField!.touched
+                  ? 'red'
+                  : 'null'
+            }"
+            [readonly]="true"
+          />
+        </p>
+        <div
+          *ngIf="
+            correoElectronicoField!.errors && correoElectronicoField!.touched
+          "
+          style="color: red"
+        >
+          <p *ngIf="correoElectronicoField!.hasError('required')">
+            El campo correoElectronico es requerido
+          </p>
+          <p *ngIf="correoElectronicoField!.hasError('email')">
+            El correo electronico es invalido
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col col-md6">
+        <p>
+          <label>NIT</label>
+        </p>
+        <p>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Nit"
+            id="nit"
+            formControlName="nit"
+            [ngStyle]="{
+              'border-color':
+                nitField!.errors && nitField!.touched ? 'red' : 'null'
+            }"
+          />
+        </p>
+        <div *ngIf="nitField!.errors && nitField!.touched" style="color: red">
+          <p *ngIf="nitField!.hasError('required')">
+            El campo nit es requerido
+          </p>
+        </div>
+      </div>
+      <div class="col col-md6">
+        <p>
+          <label>Estado</label>
+        </p>
+        <p>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Estado"
+            id="estado"
+            formControlName="estado"
+            [ngStyle]="{
+              'border-color':
+                estadoField!.errors && estadoField!.touched ? 'red' : 'null'
+            }"
+          />
+        </p>
+        <div
+          *ngIf="estadoField!.errors && estadoField!.touched"
+          style="color: red"
+        >
+          <p *ngIf="estadoField!.hasError('required')">
+            El campo estado es requerido
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col col-md12">
+        <p>
+          <label>Direccion</label>
+        </p>
+        <p>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Direccion"
+            id="direccion"
+            formControlName="direccion"
+            [ngStyle]="{
+              'border-color':
+                direccionField!.errors && direccionField!.touched
+                  ? 'red'
+                  : 'null'
+            }"
+          />
+        </p>
+        <div
+          *ngIf="direccionField!.errors && direccionField!.touched"
+          style="color: red"
+        >
+          <p *ngIf="direccionField!.hasError('required')">
+            El campo direccion es requerido
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-md-6">
+        <button
+          class="btn btn-primary btn-circle"
+          type="button"
+          (click)="Cerrar()"
+        >
+          Cancelar
+        </button>
+      </div>
+      <div class="col col-md-6">
+        <button class="btn btn-primary btn-circle" type="submit">
+          Guardar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
